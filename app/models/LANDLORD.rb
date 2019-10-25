@@ -1,12 +1,11 @@
-class Landlord < ApplicationRecord
-	Attr_accessor :name
+class Landlord < User
 
 	def average_rating
 		count = 0
 		totalScore = 0
-		Ratings.each do |rating|
-			totalScore+=rating.Score
-			count++
+		ratings.each do |rating|
+			totalScore += rating.Score
+			count += 1
 		end
 		return totalScore/count
 	end
