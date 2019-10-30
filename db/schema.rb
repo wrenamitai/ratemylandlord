@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191025154159) do
+ActiveRecord::Schema.define(version: 20191030180118) do
 
   create_table "buildings", force: :cascade do |t|
-    t.string "address"
-    t.text   "description"
+    t.string  "address"
+    t.text    "description"
+    t.integer "landlord_id"
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.float "score"
-    t.text  "blurb"
+    t.float   "score"
+    t.text    "blurb"
+    t.integer "landlord_id"
+    t.integer "tenant_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 20191025154159) do
     t.integer  "building_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "type"
   end
 
 end

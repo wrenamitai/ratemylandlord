@@ -1,5 +1,5 @@
 class Landlord < User
-
+	has_many :buildings
 	def average_rating
 		count = 0
 		totalScore = 0

@@ -1,3 +1,3 @@
 class Building < ApplicationRecord
-	Belongs_to :landlord
+	belongs_to :landlord
 end
